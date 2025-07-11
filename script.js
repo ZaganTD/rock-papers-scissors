@@ -18,12 +18,44 @@ function computerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+function humanWin(human, computer) {
+    if (human == 'rock' && computer == 'scissor') {
+        return true
+    } else if (human == 'paper' && computer == 'rock') {
+        return true
+    } else if (human == 'scissor' && computer == 'paper') {
+        return true
+    } else return false
+}
+
+function computerWin(computer, human) {
+    if (computer == 'rock' && human == 'scissor') {
+        return true
+    } else if (computer == 'paper' && human == 'rock') {
+        return true
+    } else if (computer == 'scissor' && human == 'paper') {
+        return true
+    } else return false
+}
+
 function playRound() {
-    for (i = 1; i < 5; i++){
+    for (i = 1; i <= 5; i++){
         let human = humanChoice();
         let computer = computerChoice();
         if (human == computer) {
             console.log(`${human} and ${computer} are the same! It\'s a tie!`)
-        } else if ()
+        } else if (humanWin(human, computer)) {
+            ++humanScore;
+            console.log(`You win! ${human} beats ${computer}!`);
+            console.log('Human Score:' + '' + humanScore);
+            console.log('Computer Score' + '' + computerScore);
+        } else if (computerWin(computer, human)) {
+            ++computerScore;
+            console.log(` ${human} beats ${computer}!`);
+            console.log( 'Your score:' + '' +humanScore);
+            console.log('Computer Score:' + '' +computerScore);
+        }
     }
 }
+
+playRound();
