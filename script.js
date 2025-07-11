@@ -43,14 +43,20 @@ function playRound() {
         let human = humanChoice();
         let computer = computerChoice();
         if (human == computer) {
+            human = human.at(0).toUpperCase() + human.slice(1)
+            computer = computer.at(0).toUpperCase() + computer.slice(1)
             console.log(`${human} and ${computer} are the same! It\'s a tie!`)
         } else if (humanWin(human, computer)) {
             ++humanScore;
+            human = human.at(0).toUpperCase() + human.slice(1)
+            computer = computer.at(0).toUpperCase() + computer.slice(1)
             console.log(`You win! ${human} beats ${computer}!`);
             console.log('Human Score:' + '' + humanScore);
             console.log('Computer Score' + '' + computerScore);
         } else if (computerWin(computer, human)) {
             ++computerScore;
+            human = human.at(0).toUpperCase() + human.slice(1)
+            computer = computer.at(0).toUpperCase() + computer.slice(1)
             console.log(` ${human} beats ${computer}!`);
             console.log( 'Your score:' + '' +humanScore);
             console.log('Computer Score:' + '' +computerScore);
