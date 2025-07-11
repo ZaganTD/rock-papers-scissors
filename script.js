@@ -6,3 +6,12 @@ function humanChoice() {
     } else alert('Wrong input!')
 }
 
+function computerChoice() {
+    let y = Math.random() * 10
+    if (y <= 3.33) {
+        return 'rock'
+    } else if (y > 3.33 && y <= 6.66) {
+        return 'paper'
+    } else return 'scissor'
+}
+
