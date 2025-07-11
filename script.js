@@ -15,3 +15,15 @@ function computerChoice() {
     } else return 'scissor'
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound() {
+    for (i = 1; i < 5; i++){
+        let human = humanChoice();
+        let computer = computerChoice();
+        if (human == computer) {
+            console.log(`${human} and ${computer} are the same! It\'s a tie!`)
+        } else if ()
+    }
+}
