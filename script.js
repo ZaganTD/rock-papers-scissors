@@ -2,31 +2,29 @@
 function computerChoice() {
     let y = Math.random() * 10
     if (y <= 3.33) {
-        return 'rock'
+        return 'Rock'
     } else if (y > 3.33 && y <= 6.66) {
-        return 'paper'
-    } else return 'scissor'
+        return 'Paper'
+    } else return 'Scissor'
 }
 
-let humanScore = 0;
-let computerScore = 0;
 
 function humanWin(human, computer) {
-    if (human == 'rock' && computer == 'scissor') {
+    if (human == 'Rock' && computer == 'Scissor') {
         return true
-    } else if (human == 'paper' && computer == 'rock') {
+    } else if (human == 'Paper' && computer == 'Rock') {
         return true
-    } else if (human == 'scissor' && computer == 'paper') {
+    } else if (human == 'Scissor' && computer == 'Paper') {
         return true
     } else return false
 }
 
 function computerWin(computer, human) {
-    if (computer == 'rock' && human == 'scissor') {
+    if (computer == 'Rock' && human == 'Scissor') {
         return true
-    } else if (computer == 'paper' && human == 'rock') {
+    } else if (computer == 'Paper' && human == 'Rock') {
         return true
-    } else if (computer == 'scissor' && human == 'paper') {
+    } else if (computer == 'Scissor' && human == 'Paper') {
         return true
     } else return false
 }
