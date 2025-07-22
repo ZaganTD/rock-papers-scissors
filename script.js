@@ -1,10 +1,3 @@
-function humanChoice() {
-    let x = prompt('Choose your weapon:')
-    x = x.toLowerCase();
-    if (x == 'rock' || x == 'paper' || x == 'scissor') {
-        return x 
-    } else alert('Wrong input!')
-}
 
 function computerChoice() {
     let y = Math.random() * 10
@@ -38,30 +31,3 @@ function computerWin(computer, human) {
     } else return false
 }
 
-function playRound() {
-    for (i = 1; i <= 5; i++){
-        let human = humanChoice();
-        let computer = computerChoice();
-        if (human == computer) {
-            human = human.at(0).toUpperCase() + human.slice(1)
-            computer = computer.at(0).toUpperCase() + computer.slice(1)
-            console.log(`${human} and ${computer} are the same! It\'s a tie!`)
-        } else if (humanWin(human, computer)) {
-            ++humanScore;
-            human = human.at(0).toUpperCase() + human.slice(1)
-            computer = computer.at(0).toUpperCase() + computer.slice(1)
-            console.log(`You win! ${human} beats ${computer}!`);
-            console.log('Human Score:' + '' + humanScore);
-            console.log('Computer Score' + '' + computerScore);
-        } else if (computerWin(computer, human)) {
-            ++computerScore;
-            human = human.at(0).toUpperCase() + human.slice(1)
-            computer = computer.at(0).toUpperCase() + computer.slice(1)
-            console.log(` ${human} beats ${computer}!`);
-            console.log( 'Your score:' + '' +humanScore);
-            console.log('Computer Score:' + '' +computerScore);
-        }
-    }
-}
-
-playRound();
