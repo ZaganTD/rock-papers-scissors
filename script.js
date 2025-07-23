@@ -29,3 +29,28 @@ function computerWin(computer, human) {
     } else return false
 }
 
+let humanScore = document.querySelector('.score-human')
+let pcScore = document.querySelector('.score-pc')
+let button = document.querySelectorAll('.button')
+let container = document.querySelector('.container')
+let anounContainer = document.querySelector('.anoun')
+
+let computerCh = computerChoice()
+
+for (let i of button) {
+    i.addEventListener('click', (e) => {
+        if (humanWin(e.target.innerHTML, computerCh)) {
+            anounContainer.innerHTML = ''
+            let anoun = document.createElement('h1')
+            anoun.textContent = `You win! ${e.target.innerHTML} beats ${computerCh}`
+            anounContainer.appendChild(anoun)
+        } else if (computerWin(computerChoice(), e.target.innerHTML)) {
+            anounContainer.innerHTML = ''
+            let anoun = document.createElement('h1')
+            anoun.textContent = `You lose! ${computerCh} beats ${e.target.innerHTML}`
+            anounContainer.appendChild(anoun)
+        }
+
+    })
+}
+
