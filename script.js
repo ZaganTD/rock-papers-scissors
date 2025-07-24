@@ -35,19 +35,23 @@ let button = document.querySelectorAll('.button')
 let container = document.querySelector('.container')
 let anounContainer = document.querySelector('.anoun')
 
-let computerCh = computerChoice()
 
 for (let i of button) {
     i.addEventListener('click', (e) => {
-        if (humanWin(e.target.innerHTML, computerCh)) {
+        if (e.target.innerHTML === computerChoice()) {
             anounContainer.innerHTML = ''
             let anoun = document.createElement('h1')
-            anoun.textContent = `You win! ${e.target.innerHTML} beats ${computerCh}`
+            anoun.textContent = `It's a tie! ${e.target.innerHTML} and ${computerChoice()} are equal`
+            anounContainer.appendChild(anoun)
+        } else if (humanWin(e.target.innerHTML, computerChoice())) {
+            anounContainer.innerHTML = ''
+            let anoun = document.createElement('h1')
+            anoun.textContent = `You win! ${e.target.innerHTML} beats ${computerChoice()}`
             anounContainer.appendChild(anoun)
         } else if (computerWin(computerChoice(), e.target.innerHTML)) {
             anounContainer.innerHTML = ''
             let anoun = document.createElement('h1')
-            anoun.textContent = `You lose! ${computerCh} beats ${e.target.innerHTML}`
+            anoun.textContent = `You lose! ${computerChoice()} beats ${e.target.innerHTML}`
             anounContainer.appendChild(anoun)
         }
 
